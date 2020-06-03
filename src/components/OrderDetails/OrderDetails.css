@@ -1,0 +1,15 @@
+.title-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+.title-card > div {
+
+    width: 50%;
+    text-align: left;
+    font-size: 30px;
+  }
+.textright{
+    text-align: right;
+}
