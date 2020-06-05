@@ -6,19 +6,21 @@
     text-align: right;
 }
 
-.Blog li {
+.Ecommerce li {
     display: inline-block;
-    margin: 20px;
+    margin: auto;
 }
-
-.Blog a {
+/* .Ecommerce h5 {
+    float: left;
+} */
+.Ecommerce a {
     text-decoration: none;
     color: black;
 }
 
-.Blog a:hover,
-.Blog a:active,
-.Blog a.active {
+.Ecommerce a:hover,
+.Ecommerce a:active,
+.Ecommerce a.active {
     color: #fa923f;
 }
 

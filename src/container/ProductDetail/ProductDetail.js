@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import axios from 'axios';
 // import { Route, NavLink, Switch, Redirect } from "react-router-dom";
 import "./ProductDetail.css";
-import Product1 from "../../img/product-1.png"
+// import Product1 from "../../img/product-1.png"
 import { connect } from 'react-redux';
 import * as actionTypes from '../../store/action'
 class ProductDetail extends Component {
@@ -39,18 +39,19 @@ class ProductDetail extends Component {
     const bookPrice = this.props.selectedBook && this.props.selectedBook.price;
     const bookTitle = this.props.selectedBook && this.props.selectedBook.title;
     const bookinCart= this.props.selectedBook && this.props.selectedBook.inCart;
+    const bookImage=this.props.selectedBook && this.props.selectedBook.img;
     const bookDescription =
       this.props.selectedBook && this.props.selectedBook.info;
     console.log("selected poduct");
     console.log(this.props.selectedBook && this.props.selectedBook);
     return (
       <div className="flex-container">
-        <div><img src={Product1}  alt="..."/></div>
+        <div><img src={bookImage}  alt="..."/></div>
         <div>
           <div className="card" style={{maxWidth: 25 + 'em'    }}>
-            <div className="card-header">{bookTitle}</div>
+            <div className="card-header"><h5>{bookTitle}</h5></div>
             <div className="card-body">
-              <h5 className="card-title">BookPrice:-{bookPrice}</h5>
+              <h5 className="card-title">BookPrice:-${bookPrice}</h5>
               <p className="card-text">{bookDescription}</p>
               
               <div className="flex-container">

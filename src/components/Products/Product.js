@@ -6,6 +6,7 @@ const product = (props) => (
   <img src={props.image} className="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title" onClick={props.clicked}>{props.title}</h5>
+   
     <p className="card-text">{props.description}</p>
   </div>
   </div>

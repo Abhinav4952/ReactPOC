@@ -1,6 +1,6 @@
 import React from "react";
 import "./OrderDetails.css";
-import Product1 from "../../img/sample-phone.png";
+// import Product1 from "../../img/sample-phone.png";
 const orderDetails = (props) => (
   <div class="card mb-3">
     <div class="card-header">
@@ -9,14 +9,16 @@ const orderDetails = (props) => (
         <div style={{ textAlign: "right" }}><h5>Status:-{props.orderStatus}</h5></div>
       </div>
     </div>
-    <div class="card-horizontal">
+    <div class="card mb-3" style={{ maxWidth: 100 + "%",border:0 }}>
+    <div class="row no-gutters">
       <div class="img-square-wrapper">
-        <img class="" src={Product1} alt="Card image cap" />
+        <img class="" src={props.orderImage} alt="Card image cap" />
       </div>
       <div class="card-body">
         <h4 class="card-title">{props.bookTitle}</h4>
         <p>Book Price:-${props.orderPrice}</p>
-        <p>Quantity:-${props.orderQuantity}</p>
+        <p>Quantity:-{props.orderQuantity}</p>
+      </div>
       </div>
     </div>
   </div>
