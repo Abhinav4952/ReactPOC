@@ -1,11 +1,10 @@
 import React from "react";
 import "./Cart.css";
-// import Product1 from "../../../img/product-1.png";
 const cart = (props) => (
   <div class="card mb-3" style={{ maxWidth: 540 + "px" }}>
     <div class="row no-gutters">
       <div class="col-md-5">
-        <img class="" src={props.image} alt="Card image cap" />
+        <img class="" src={props.image} alt="Card cap" />
       </div>
       <div class="col-md-7">
         <div class="card-body">

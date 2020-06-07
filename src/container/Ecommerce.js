@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import axios from 'axios';
 import { Route, NavLink, Switch, Redirect } from "react-router-dom";
 
 import Products from "./Products/Products";
@@ -25,14 +24,12 @@ class Ecommerce extends Component {
               <NavLink to="/orders" exact>
                 Orders
               </NavLink>
-              
             </nav>
           </div>
         </header>
         <Switch>
             <Route path="/orders" exact component={Orders} />
             <Route path="/cart" exact component={Cart} />
-            {/* <Route path="/img" component={Cart} /> */}
             <Route path="/:id" exact component={ProductDetail} />
             <Route path="/" component={Products} />
         </Switch>

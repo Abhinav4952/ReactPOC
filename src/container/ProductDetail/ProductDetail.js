@@ -1,16 +1,10 @@
 import React, { Component } from "react";
-// import axios from 'axios';
-// import { Route, NavLink, Switch, Redirect } from "react-router-dom";
 import "./ProductDetail.css";
-// import Product1 from "../../img/product-1.png"
 import { connect } from 'react-redux';
 import * as actionTypes from '../../store/action'
 class ProductDetail extends Component {
   
-  constructor(props) {
-    super(props);
-    
-  }
+
   componentDidMount() {
     console.log(this.props.match.params.id);
     console.log(this.props.orders);
@@ -67,7 +61,6 @@ class ProductDetail extends Component {
 }
 const mapStateToProps = state => {
   return {
-      // prs: state.value
       selectedBook:state.detailProduct,
       orders:state.orders
   };

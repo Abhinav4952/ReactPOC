@@ -6,23 +6,19 @@ class AddressDetails extends Component {
   state = {
     flatNo: "",
     colony: "",
-    city:"",
-    stateVal:"",
-    editAddressfield:true
+    city: "",
+    stateVal: "",
+    editAddressfield: true,
   };
-  constructor(props){
-    super(props);
-    
-  }
-  componentDidMount(){
-    this.setState(()=>{
+  componentDidMount() {
+    this.setState(() => {
       return {
-        flatNo:this.props.flatNo,
-        colony:this.props.colony,
-        city:this.props.city,
-        stateVal:this.props.stateVal,
-      }
-    })
+        flatNo: this.props.flatNo,
+        colony: this.props.colony,
+        city: this.props.city,
+        stateVal: this.props.stateVal,
+      };
+    });
   }
 
   flatNoChangedHandler = (event) => {
@@ -38,10 +34,10 @@ class AddressDetails extends Component {
   stateValChangedHandler = (event) => {
     this.setState({ stateVal: event.target.value });
   };
-  editAddress=(fieldVal)=>{
-    this.setState({editAddressfield:!fieldVal})
-  }
-  
+  editAddress = (fieldVal) => {
+    this.setState({ editAddressfield: !fieldVal });
+  };
+
   render() {
     return (
       <div>
@@ -93,7 +89,19 @@ class AddressDetails extends Component {
             onChange={this.stateValChangedHandler}
           />
         </div>
-        <button className="btn btn-primary"  disabled={this.state.editAddressfield} onClick={()=>{this.props.saveaddress(this.state.flatNo,this.state.colony,this.state.city,this.state.stateVal);this.editAddress(this.state.editAddressfield)}} >
+        <button
+          className="btn btn-primary"
+          disabled={this.state.editAddressfield}
+          onClick={() => {
+            this.props.saveaddress(
+              this.state.flatNo,
+              this.state.colony,
+              this.state.city,
+              this.state.stateVal
+            );
+            this.editAddress(this.state.editAddressfield);
+          }}
+        >
           Save Address
         </button>
 
@@ -102,7 +110,9 @@ class AddressDetails extends Component {
           className="btn btn-primary"
           style={{ marginLeft: 25 + "px" }}
           disabled={!this.state.editAddressfield}
-          onClick={()=>{this.editAddress(this.state.editAddressfield)}}
+          onClick={() => {
+            this.editAddress(this.state.editAddressfield);
+          }}
         >
           Edit Address
         </button>

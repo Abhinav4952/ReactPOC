@@ -1,6 +1,3 @@
-// import axios from 'axios';
-// import { Route, NavLink, Switch, Redirect } from "react-router-dom";
-// import * as actionTypes from "../../store/action";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import OrderDetails from "../../components/OrderDetails/OrderDetails";
@@ -9,7 +6,6 @@ class Orders extends Component {
     document.getElementById("headertag").innerHTML = "E Commerce | Orders";
   }
   render() {
-    // document.getElementById("headertag").innerHTML="E Commerce | Orders"
     let ordersList = null;
     ordersList =
       this.props.orders.length === 0 ? (
@@ -40,7 +36,6 @@ class Orders extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    // prs: state.value
     orders: state.orders,
   };
 };

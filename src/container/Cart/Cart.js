@@ -1,39 +1,15 @@
 import React, { Component } from "react";
-// import axios from 'axios';
-// import { Route, NavLink, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actionTypes from "../../store/action";
 import CartComponent from "../../components/Products/Cart/Cart";
 import CartPayDetails from "../../components/CartPayDetails/CartPayDetails";
 import AddressDetails from "../../components/AddressDetails/AddressDetails";
-// import EmptyCart from "../../img/cart-empty.png"
 class Cart extends Component {
   componentDidMount() {
     document.getElementById("headertag").innerHTML = "E Commerce | Cart";
     console.log(this.props.cart);
-    // console.log(new Date());
   }
   render() {
-    console.log("printing cart");
-    console.log(this.props.cart);
-    let checkoutOption =
-      this.props.cart.length === 0
-        ? null
-        : () => {
-            return (
-              <div>
-                <button className="btn btn-primary">Checkout</button>
-                <button
-                  className="btn btn-primary"
-                  style={{ marginLeft: 25 + "px" }}
-                >
-                  Clear Cart
-                </button>
-              </div>
-            );
-          };
-    console.log(checkoutOption);
-    // console.log(this.props.cart);
     let cartList = null;
     cartList =
       this.props.cart.length === 0 ? (
@@ -57,7 +33,6 @@ class Cart extends Component {
           );
         })
       );
-    console.log(cartList);
     return (
       <div className="container">
         <div className="row">
@@ -99,7 +74,6 @@ class Cart extends Component {
               >
                 Clear Cart
               </button>
-              {/* {checkoutOption} */}
             </div>
           </div>
           <div className="col-sm-7">
@@ -112,7 +86,6 @@ class Cart extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    // prs: state.value
     cart: state.cart,
     cartSubTotal: state.cartSubTotal,
     cartTax: state.cartTax,
