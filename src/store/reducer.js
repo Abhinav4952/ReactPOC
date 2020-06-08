@@ -38,16 +38,14 @@ const getTotals = (cart) => {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.ADD_PRODUCTS:
-      let products = addProducts();
       return {
         ...state,
-        products: products,
+        products:  action.products,
       };
     case actionTypes.DETAIL_PRODUCT:
-      const product = getDetailItem(action.productId, state.products);
       return {
         ...state,
-        detailProduct: product,
+        detailProduct: getDetailItem(action.productId, state.products),
       };
     case actionTypes.ADD_TO_CART:
       const addToCartRes = addtoCart(state.products, action.productId);

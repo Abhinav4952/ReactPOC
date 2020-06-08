@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Product from "../../components/Products/Product";
 import * as actionTypes from '../../store/action'
 import "./Products.css";
+import {addProducts} from "../../store/actions/productActions"
 class Products extends Component {
   componentDidMount() {
     document.getElementById("headertag").innerHTML = "E Commerce | Products";
@@ -44,7 +45,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-      addProducts: () => dispatch({type: actionTypes.ADD_PRODUCTS}),
+      addProducts: () => dispatch(addProducts()),
   }
 };
 
